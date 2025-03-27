@@ -11,11 +11,11 @@
     <body>
         <h1>Cadastrado com sucesso!</h1>
         <%
-            Aluno objAluno = new Aluno();
-            
-            objAluno.setNome(request.getParameter("n_nome"));
-            objAluno.setCpf(request.getParameter("n_cpf"));
-            objAluno.setTurma(request.getParameter("n_turma"));
+            Aluno objAluno = new Aluno(
+                request.getParameter("n_nome"),
+                request.getParameter("n_cpf"),
+                request.getParameter("n_turma")
+            );
             
             AlunoDAO objAlunoDAO = new AlunoDAO();
             objAlunoDAO.cadastrarAluno(objAluno);
